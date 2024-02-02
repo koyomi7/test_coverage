@@ -53,3 +53,8 @@ class TestAccountModel(TestCase):
         account.create()
         self.assertEqual(len(Account.all()), 1)
 
+    def test_repr(self):
+        """Test the representation of an account"""
+        account = Account()
+        account.name = "Foo"
+        self.assertEqual(str(account), "<Account 'Foo'>")
